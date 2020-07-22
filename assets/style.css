@@ -1,0 +1,848 @@
+@import url(https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #211f1f;
+    font-size: 18px;
+    font-family: Karla, sans-serif
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+.container {
+    width: 80% !important
+}
+
+h1 {
+    font-size: calc(26px + 6 * ((100vw - 320px)/ 360))
+}
+
+h2 {
+    font-size: calc(18px + 5 * ((100vw - 320px)/ 360))
+}
+
+button {
+    border: 0;
+    background: #05386b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 3px #000;
+    border-radius: 3px;
+    transition: all .2s ease-in-out
+}
+
+button a {
+    padding: 20px 30px;
+    color: #fff;
+    display: block
+}
+
+button:hover {
+    background: #05417d
+}
+
+button.secondary {
+    background: #211f1f
+}
+
+button.secondary:hover {
+    background: #322f2f
+}
+
+button:focus {
+    outline: 0
+}
+
+a {
+    text-decoration: none
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%)
+}
+
+.floating-btn {
+    position: fixed;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    padding: 14px 0;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, .5);
+    z-index: 999
+}
+
+#menu-btn {
+    top: 20px
+}
+
+#to-top {
+    display: none;
+    bottom: 20px
+}
+
+.floating-btn i {
+    color: #fff;
+    font-size: 22px
+}
+
+#sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    background: #05386b;
+    box-shadow: 0 0 1px #777;
+    transform: translate(300px);
+    transition: all .2s ease-in-out
+}
+
+#sidebar * {
+    color: #fff
+}
+
+#sidebar.overlay {
+    display: none
+}
+
+#sidebar.open .overlay {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 100%;
+    z-index: 9
+}
+
+#sidebar.open {
+    transform: translate(0)
+}
+
+#sidebar .sidebar-content .header {
+    background: #073563;
+    color: #fff;
+    padding: 35px 15px
+}
+
+#sidebar .sidebar-content li {
+    list-style: none
+}
+
+#sidebar .sidebar-content li a {
+    padding: 20px;
+    display: block
+}
+
+#sidebar .sidebar-content li a:hover {
+    background: #05417d
+}
+
+#home {
+    height: 100vh;
+    position: relative;
+    background: radial-gradient(#febb47, #bf892b)
+}
+
+#home .content h1 {
+    font-size: calc(32px + 20 * ((100vw - 320px)/ 360))
+}
+
+#home .content h2 {
+    margin-bottom: 50px
+}
+
+#about {
+    padding: 100px 0;
+    text-align: center
+}
+
+#about h2 {
+    margin-bottom: 20px
+}
+
+#about p {
+    margin-bottom: 30px
+}
+
+#services * {
+    color: #fff
+}
+
+#services {
+    background: radial-gradient(#063d74, #05386b);
+    text-align: center;
+    padding: 100px 0
+}
+
+#services .icon {
+    background: #fff;
+    padding-top: 36px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 15px
+}
+
+#services .col:hover {
+    transform: scale(1.1);
+    transition: all 250ms ease-in-out
+}
+
+#services .col:hover .icon {
+    background: #fcb63d
+}
+
+#services .col:hover .icon i {
+    color: #fff
+}
+
+#services .col:hover h2,
+#services .col:hover p {
+    color: #fcb63d
+}
+
+#services .icon i {
+    font-size: 32px;
+    color: #05386b
+}
+
+#services .row {
+    margin-top: 50px
+}
+
+#services .col {
+    margin-bottom: 20px
+}
+
+#services h2 {
+    margin-bottom: 5px
+}
+
+#services p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, .7)
+}
+
+#download {
+    position: relative;
+    background: url(bg-callout.jpg) no-repeat center;
+    background-size: cover;
+    height: 100vh
+}
+
+#download h1 {
+    margin-bottom: 20px
+}
+
+#projects {
+    padding: 100px 0
+}
+
+#projects h1 {
+    text-align: center;
+    margin-bottom: 30px
+}
+
+#projects .row {
+    margin-bottom: 0
+}
+
+#projects .col {
+    padding: 0 !important;
+    transition: all 2s ease-in-out;
+    position: relative;
+    margin-top: -6px
+}
+
+#projects .col:hover img {
+    clip-path: inset(2rem);
+    filter: brightness(.7)
+}
+
+#projects img {
+    width: 100%;
+    clip-path: inset(0);
+    filter: brightness(1);
+    transition: clip-path 250ms ease-in-out
+}
+
+#projects .desc {
+    position: absolute;
+    padding: 10px;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 1
+}
+
+#projects .desc h2,
+#projects .desc p {
+    color: #fff
+}
+
+footer {
+    margin-bottom: 50px;
+    text-align: center
+}
+
+footer .share-icon {
+    padding: 75px 0 50px 0
+}
+
+footer .icon {
+    background: #05386b;
+    padding: 20px 23px;
+    border-radius: 50%
+}
+
+footer .icon:nth-child(2) {
+    margin: 0 20px
+}
+
+footer .icon i {
+    color: #fff
+}
+
+.copyright {
+    background: #f0f0f0;
+    display: inline-block;
+    padding: 3px 5px 3px 25px;
+    border-radius: 10px;
+    font-size: 14px;
+    position: relative;
+    border: 1px solid #ddd;
+    text-transform: uppercase;
+    color: #777
+}
+
+.copyright::before {
+    position: absolute;
+    content: '';
+    top: calc(50% - 1px);
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: #ddd;
+    border-radius: 50%;
+    transform: translate(5px, -7px)
+}
+
+.container {
+    margin: 0 auto;
+    /* max-width: 1280px; */
+    width: 90%;
+}
+
+@media only screen and (min-width: 601px) {
+    .container {
+        width: 95%
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 90%
+    }
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.row .col {
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 .75rem;
+    min-height: 1px
+}
+
+.row .col.s1 {
+    width: 8.3333333333%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s2 {
+    width: 16.6666666667%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s3 {
+    width: 25%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s4 {
+    width: 33.3333333333%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s5 {
+    width: 41.6666666667%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s6 {
+    width: 50%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s7 {
+    width: 58.3333333333%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s8 {
+    width: 66.6666666667%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s9 {
+    width: 75%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s10 {
+    width: 83.3333333333%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s11 {
+    width: 91.6666666667%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.s12 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto
+}
+
+.row .col.off-s1 {
+    margin-left: 8.3333333333%
+}
+
+.row .col.off-s2 {
+    margin-left: 16.6666666667%
+}
+
+.row .col.off-s3 {
+    margin-left: 25%
+}
+
+.row .col.off-s4 {
+    margin-left: 33.3333333333%
+}
+
+.row .col.off-s5 {
+    margin-left: 41.6666666667%
+}
+
+.row .col.off-s6 {
+    margin-left: 50%
+}
+
+.row .col.off-s7 {
+    margin-left: 58.3333333333%
+}
+
+.row .col.off-s8 {
+    margin-left: 66.6666666667%
+}
+
+.row .col.off-s9 {
+    margin-left: 75%
+}
+
+.row .col.off-s10 {
+    margin-left: 83.3333333333%
+}
+
+.row .col.off-s11 {
+    margin-left: 91.6666666667%
+}
+
+.row .col.off-s12 {
+    margin-left: 100%
+}
+
+@media only screen and (min-width: 601px) {
+    .row .col.m1 {
+        width: 8.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m2 {
+        width: 16.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m3 {
+        width: 25%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m4 {
+        width: 33.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m5 {
+        width: 41.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m6 {
+        width: 50%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m7 {
+        width: 58.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m8 {
+        width: 66.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m9 {
+        width: 75%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m10 {
+        width: 83.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m11 {
+        width: 91.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.m12 {
+        width: 100%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.off-m1 {
+        margin-left: 8.3333333333%
+    }
+    .row .col.off-m2 {
+        margin-left: 16.6666666667%
+    }
+    .row .col.off-m3 {
+        margin-left: 25%
+    }
+    .row .col.off-m4 {
+        margin-left: 33.3333333333%
+    }
+    .row .col.off-m5 {
+        margin-left: 41.6666666667%
+    }
+    .row .col.off-m6 {
+        margin-left: 50%
+    }
+    .row .col.off-m7 {
+        margin-left: 58.3333333333%
+    }
+    .row .col.off-m8 {
+        margin-left: 66.6666666667%
+    }
+    .row .col.off-m9 {
+        margin-left: 75%
+    }
+    .row .col.off-m10 {
+        margin-left: 83.3333333333%
+    }
+    .row .col.off-m11 {
+        margin-left: 91.6666666667%
+    }
+    .row .col.off-m12 {
+        margin-left: 100%
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .row .col.l1 {
+        width: 8.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l2 {
+        width: 16.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l3 {
+        width: 25%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l4 {
+        width: 33.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l5 {
+        width: 41.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l6 {
+        width: 50%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l7 {
+        width: 58.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l8 {
+        width: 66.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l9 {
+        width: 75%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l10 {
+        width: 83.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l11 {
+        width: 91.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.l12 {
+        width: 100%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.off-l1 {
+        margin-left: 8.3333333333%
+    }
+    .row .col.off-l2 {
+        margin-left: 16.6666666667%
+    }
+    .row .col.off-l3 {
+        margin-left: 25%
+    }
+    .row .col.off-l4 {
+        margin-left: 33.3333333333%
+    }
+    .row .col.off-l5 {
+        margin-left: 41.6666666667%
+    }
+    .row .col.off-l6 {
+        margin-left: 50%
+    }
+    .row .col.off-l7 {
+        margin-left: 58.3333333333%
+    }
+    .row .col.off-l8 {
+        margin-left: 66.6666666667%
+    }
+    .row .col.off-l9 {
+        margin-left: 75%
+    }
+    .row .col.off-l10 {
+        margin-left: 83.3333333333%
+    }
+    .row .col.off-l11 {
+        margin-left: 91.6666666667%
+    }
+    .row .col.off-l12 {
+        margin-left: 100%
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .row .col.xl1 {
+        width: 8.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl2 {
+        width: 16.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl3 {
+        width: 25%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl4 {
+        width: 33.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl5 {
+        width: 41.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl6 {
+        width: 50%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl7 {
+        width: 58.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl8 {
+        width: 66.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl9 {
+        width: 75%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl10 {
+        width: 83.3333333333%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl11 {
+        width: 91.6666666667%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.xl12 {
+        width: 100%;
+        margin-left: auto;
+        left: auto;
+        right: auto
+    }
+    .row .col.off-xl1 {
+        margin-left: 8.3333333333%
+    }
+    .row .col.off-xl2 {
+        margin-left: 16.6666666667%
+    }
+    .row .col.off-xl3 {
+        margin-left: 25%
+    }
+    .row .col.off-xl4 {
+        margin-left: 33.3333333333%
+    }
+    .row .col.off-xl5 {
+        margin-left: 41.6666666667%
+    }
+    .row .col.off-xl6 {
+        margin-left: 50%
+    }
+    .row .col.off-xl7 {
+        margin-left: 58.3333333333%
+    }
+    .row .col.off-xl8 {
+        margin-left: 66.6666666667%
+    }
+    .row .col.off-xl9 {
+        margin-left: 75%
+    }
+    .row .col.off-xl10 {
+        margin-left: 83.3333333333%
+    }
+    .row .col.off-xl11 {
+        margin-left: 91.6666666667%
+    }
+    .row .col.off-xl12 {
+        margin-left: 100%
+    }
+}
